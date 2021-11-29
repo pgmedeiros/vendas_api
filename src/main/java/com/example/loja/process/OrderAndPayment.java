@@ -8,4 +8,14 @@ public class OrderAndPayment {
     private FinalOrder finalOrder;
     private Payment payment;
 
+    public boolean analyzeAvailability(FinalOrder finalOrder, Payment payment){
+        if(finalOrder.getFinalPrice() <= payment.getCredit()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
+
 }

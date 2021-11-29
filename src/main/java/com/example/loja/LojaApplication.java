@@ -1,5 +1,10 @@
 package com.example.loja;
 
+import com.example.loja.model.order.FinalOrder;
+import com.example.loja.model.order.Order;
+import com.example.loja.model.payment.Payment;
+import com.example.loja.model.product.Product;
+import com.example.loja.process.OrderAndPayment;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -8,6 +13,15 @@ public class LojaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LojaApplication.class, args);
+		Product product = new Product("Feijão", "12345", 12.0);
+		Order order = new Order(product, 4);
+		FinalOrder finalOrder = new FinalOrder();
+		finalOrder.setOrders(order);
+		Payment payment = new Payment();
+		Boolean process = new OrderAndPayment().analyzeAvailability(finalOrder, payment);
+		System.out.println(process);
+		//adiciona pedido ao banco de dados
+		// realiza despacho
 	}
 
 }
