@@ -16,9 +16,9 @@ public class LojaApplication {
 		Product product = new Product("Feijão", "12345", 12.0);
 		OrderForCart orderForCart = new OrderForCart(product, 4);
 		FinalOrderForCart finalOrderForCart = new FinalOrderForCart();
-		finalOrderForCart.setOrders(orderForCart);
+		finalOrderForCart.setOrdersForCart(orderForCart);
 		Payment payment = new Payment();
-		Boolean process = new OrderAndPayment().analyzeAvailability(finalOrderForCart, payment);
+		Boolean process = new OrderAndPayment(finalOrderForCart, payment).analyzeAvailability();
 		System.out.println(process);
 		//adiciona pedido ao banco de dados
 		// realiza despacho

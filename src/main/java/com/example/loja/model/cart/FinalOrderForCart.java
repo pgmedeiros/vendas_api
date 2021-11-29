@@ -11,7 +11,7 @@ public class FinalOrderForCart {
         return orderForCarts;
     }
 
-    public void setOrders(OrderForCart orderForCart) {
+    public void setOrdersForCart(OrderForCart orderForCart) {
         this.orderForCarts.add(orderForCart);
     }
 
@@ -24,4 +24,8 @@ public class FinalOrderForCart {
        }
        return finalValue;
     }
+
+    public boolean doOrder(){
+        return false;
+    };
 }

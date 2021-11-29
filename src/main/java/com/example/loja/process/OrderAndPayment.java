@@ -8,8 +8,21 @@ public class OrderAndPayment {
     private FinalOrderForCart finalOrderForCart;
     private Payment payment;
 
-    public boolean analyzeAvailability(FinalOrderForCart finalOrderForCart, Payment payment){
-        if(finalOrderForCart.getFinalPrice() <= payment.getCredit()){
+    public OrderAndPayment(FinalOrderForCart finalOrderForCart, Payment payment) {
+        this.finalOrderForCart = finalOrderForCart;
+        this.payment = payment;
+    }
+
+    public Boolean doOrder(){
+        if(analyzeAvailability()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public boolean analyzeAvailability(){
+        if(this.finalOrderForCart.getFinalPrice() <= this.payment.getCredit()){
             return true;
         }else{
             return false;
