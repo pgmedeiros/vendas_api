@@ -1,13 +1,13 @@
-package com.example.loja.model.order;
+package com.example.loja.model.cart;
 
 import com.example.loja.model.product.Product;
 
-public class Order {
+public class OrderForCart {
 
     private Product product;
     private Integer amount;
 
-    public Order(Product product, Integer amount) {
+    public OrderForCart(Product product, Integer amount) {
         this.product = product;
         this.amount = amount;
     }
