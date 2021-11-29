@@ -1,6 +1,6 @@
 package com.example.loja.database;
 
-import com.example.loja.model.Product;
+import com.example.loja.model.product.Product;
 
 public class getProducts {
 

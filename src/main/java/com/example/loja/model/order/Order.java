@@ -1,4 +1,6 @@
-package com.example.loja.model;
+package com.example.loja.model.order;
+
+import com.example.loja.model.product.Product;
 
 public class Order {
 

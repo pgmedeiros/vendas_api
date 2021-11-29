@@ -1,4 +1,4 @@
-package com.example.loja.model;
+package com.example.loja.model.order;
 
 import java.util.ArrayList;
 
