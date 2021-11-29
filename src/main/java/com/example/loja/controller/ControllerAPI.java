@@ -1,13 +1,10 @@
 package com.example.loja.controller;
 
-import com.example.loja.model.Pessoa;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ControllerAPI {
-    @GetMapping("/")
+    /*@GetMapping("/")
     public ResponseEntity main(){
         return new ResponseEntity("Tudo está funciando por aqui", HttpStatus.OK);
     }
@@ -27,6 +24,6 @@ public class ControllerAPI {
         return new ResponseEntity(pessoa.getNome(), HttpStatus.OK);
     }
 
-
+*/
 
 }
