@@ -2,20 +2,12 @@ package com.example.loja.model;
 
 public class Order {
 
-    private Client client;
     private Product product;
+    private Integer amount;
 
-    public Order(Client client, Product product) {
-        this.client = client;
+    public Order(Product product, Integer amount) {
         this.product = product;
-    }
-
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
+        this.amount = amount;
     }
 
     public Product getProduct() {
@@ -24,5 +16,13 @@ public class Order {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    public Integer getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Integer amount) {
+        this.amount = amount;
     }
 }
