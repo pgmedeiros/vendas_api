@@ -1,16 +1,21 @@
 package com.example.loja.model.product;
 
-public class Product {
+import javax.persistence.*;
+import java.io.Serializable;
+
+@Entity
+public class Product implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String name;
     private String cod;
     private Double price;
 
-    public Product(String name, String cod, Double price) {
-        this.name = name;
-        this.cod = cod;
-        this.price = price;
-    }
 
     public String getName() {
         return name;
@@ -35,4 +40,14 @@ public class Product {
     public void setPrice(Double price) {
         this.price = price;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+
 }

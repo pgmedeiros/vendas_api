@@ -1,11 +1,26 @@
 package com.example.loja.controller;
 
+import com.example.loja.database.ProductsInterface;
+import com.example.loja.model.product.Product;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Properties;
 
 @RestController
 public class ControllerAPI {
-    /*@GetMapping("/")
+    @Autowired
+    private ProductsInterface productsInterface;
+
+    @GetMapping("/")
     public ResponseEntity main(){
+        Product product = new Product();
+        product.setName("feijao1");
+        product.setCod("1234");
+        product.setPrice(12.00);
+        productsInterface.save(product);
         return new ResponseEntity("Tudo está funciando por aqui", HttpStatus.OK);
     }
 
@@ -19,11 +34,11 @@ public class ControllerAPI {
         return parametro + "fala coisinha";
     }
 
-    @PostMapping("/post")
+    /*@PostMapping("/post")
     public ResponseEntity recebendoPost(@RequestBody Pessoa pessoa){
         return new ResponseEntity(pessoa.getNome(), HttpStatus.OK);
-    }
+    }*/
 
-*/
+
 
 }
