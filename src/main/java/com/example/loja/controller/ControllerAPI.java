@@ -14,31 +14,23 @@ public class ControllerAPI {
     @Autowired
     private ProductsInterface productsInterface;
 
-    @GetMapping("/")
+    @GetMapping("/produtos")
     public ResponseEntity main(){
-        Product product = new Product();
-        product.setName("feijao1");
-        product.setCod("1234");
-        product.setPrice(12.00);
-        productsInterface.save(product);
-        return new ResponseEntity("Tudo está funciando por aqui", HttpStatus.OK);
+        //retorna lista de produtos
+        return null;
     }
 
-    @GetMapping("/text/{dados}/{dados2}")
-    public String retornarResposta(@PathVariable String dados, @PathVariable String dados2){
-        return dados + dados2;
+    @GetMapping("/produtos/{id}")
+    public ResponseEntity retornarResposta()
+    {
+        //retorna dados específicos de certo produto
+        return null;
     }
 
-    @GetMapping("/parametros")
-    public String retornarParametros(@RequestParam("parametro") String parametro){
-        return parametro + "fala coisinha";
+    @PostMapping("/pedido")
+    public ResponseEntity retornarParametros(){
+        //faz pedido
+        return null;
     }
-
-    /*@PostMapping("/post")
-    public ResponseEntity recebendoPost(@RequestBody Pessoa pessoa){
-        return new ResponseEntity(pessoa.getNome(), HttpStatus.OK);
-    }*/
-
-
 
 }
