@@ -1,15 +1,21 @@
 package com.example.loja.model.cart;
 
 import com.example.loja.model.product.Product;
+import org.springframework.stereotype.Component;
 
-public class OrderForCart {
+@Component
+public class ItemForCart {
 
     private Product product;
     private Integer amount;
 
-    public OrderForCart(Product product, Integer amount) {
+    public ItemForCart(Product product, Integer amount) {
         this.product = product;
         this.amount = amount;
+    }
+
+    public ItemForCart(){
+
     }
 
     public Product getProduct() {

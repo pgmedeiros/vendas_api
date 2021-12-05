@@ -7,7 +7,7 @@ public class Client {
     private String name;
     private String adress;
     private String phoneNumber;
-    private ArrayList<Order> orders;
+    private ArrayList<Order> orders = new ArrayList<Order>();
 
     public Client(String name, String adress, String phoneNumber) {
         this.name = name;
@@ -19,8 +19,8 @@ public class Client {
         return orders;
     }
 
-    public void setOrders(ArrayList<Order> orders) {
-        this.orders = orders;
+    public void setOrders(Order order) {
+        orders.add(order);
     }
 
     public String getName() {

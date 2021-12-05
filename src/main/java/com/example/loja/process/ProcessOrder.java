@@ -1,15 +1,17 @@
 package com.example.loja.process;
 
-import com.example.loja.model.cart.FinalOrderForCart;
+import com.example.loja.model.cart.Cart;
+import com.example.loja.model.client.Order;
 import com.example.loja.model.payment.Payment;
 
-public class OrderAndPayment {
+public class ProcessOrder extends Order {
 
-    private FinalOrderForCart finalOrderForCart;
+    private Cart cart;
     private Payment payment;
 
-    public OrderAndPayment(FinalOrderForCart finalOrderForCart, Payment payment) {
-        this.finalOrderForCart = finalOrderForCart;
+    public ProcessOrder(Cart cart, Payment payment) {
+        super();
+        this.cart = cart;
         this.payment = payment;
     }
 
@@ -22,7 +24,7 @@ public class OrderAndPayment {
     }
 
     public boolean analyzeAvailability(){
-        if(this.finalOrderForCart.getFinalPrice() <= this.payment.getCredit()){
+        if(this.cart.getFinalPrice() <= this.payment.getCredit()){
             return true;
         }else{
             return false;
