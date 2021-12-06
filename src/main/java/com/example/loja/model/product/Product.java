@@ -4,16 +4,17 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@Table(name = "product")
 public class Product implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue( strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue
+    @Column(name = "product_id")
+    private Integer id;
 
     private String name;
-    private String cod;
     private Double price;
 
 
@@ -25,14 +26,6 @@ public class Product implements Serializable {
         this.name = name;
     }
 
-    public String getCod() {
-        return cod;
-    }
-
-    public void setCod(String cod) {
-        this.cod = cod;
-    }
-
     public Double getPrice() {
         return price;
     }
@@ -41,11 +34,11 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

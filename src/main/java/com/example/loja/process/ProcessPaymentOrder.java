@@ -1,15 +1,15 @@
 package com.example.loja.process;
 
 import com.example.loja.model.cart.Cart;
-import com.example.loja.model.client.Order;
+import com.example.loja.model.payment.Order;
 import com.example.loja.model.payment.Payment;
 
-public class ProcessOrder extends Order {
+public class ProcessPaymentOrder extends Order {
 
     private Cart cart;
     private Payment payment;
 
-    public ProcessOrder(Cart cart, Payment payment) {
+    public ProcessPaymentOrder(Cart cart, Payment payment) {
         super();
         this.cart = cart;
         this.payment = payment;

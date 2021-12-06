@@ -1,33 +1,25 @@
 package com.example.loja.controller;
 
-/*
+
+import com.example.loja.database.ProductsInterface;
+import com.example.loja.model.product.Product;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 @RestController
 public class ControllerAPI {
     @Autowired
     private ProductsInterface productsInterface;
     @Autowired
-    private OrderForCart orderForCart;
 
     @GetMapping("/produtos")
     public ResponseEntity main(){
-        //retorna lista de produtos
+        Product product = new Product();
+        product.setName("SMARTPHONE 02");
+        product.setPrice(252.00);
+        productsInterface.save(product);
         return null;
     }
-
-    @GetMapping("/produtos/{id}")
-    public ResponseEntity retornarResposta()
-    {
-        //retorna dados específicos de certo produto
-        return null;
-    }
-
-    @PostMapping("/pedido")
-    public ResponseEntity retornarParametros(){
-        Product product = productsInterface.findById();
-        orderForCart.setProduct(product);
-        orderForCart.setAmount(amount);
-        return null;
-    }
-
 }
-*/

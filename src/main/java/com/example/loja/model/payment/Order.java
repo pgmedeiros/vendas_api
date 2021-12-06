@@ -1,12 +1,12 @@
-package com.example.loja.model.client;
+package com.example.loja.model.payment;
 
-import com.example.loja.process.ProcessOrder;
+import com.example.loja.process.ProcessPaymentOrder;
 
 public class Order {
-    public ProcessOrder processOrder;
+    public ProcessPaymentOrder processPaymentOrder;
 
-    public Order(ProcessOrder processOrder) {
-        this.processOrder = processOrder;
+    public Order(ProcessPaymentOrder processPaymentOrder) {
+        this.processPaymentOrder = processPaymentOrder;
     }
 
     public Order() {

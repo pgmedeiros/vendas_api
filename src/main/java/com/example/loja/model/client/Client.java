@@ -1,5 +1,7 @@
 package com.example.loja.model.client;
 
+import com.example.loja.model.payment.Order;
+
 import java.util.ArrayList;
 
 public class Client {
