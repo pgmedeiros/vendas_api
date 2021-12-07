@@ -40,3 +40,13 @@ CREATE TABLE orders (
             FOREIGN KEY(product_id)
                 REFERENCES product(product_id)
 );
+
+CREATE TABLE paymentProcess (
+    paymentProcess_id integer NOT NULL,
+    order_id integer NOT NULL,
+    status varchar(3) NOT NULL,
+    PRIMARY KEY (order_id),
+    CONSTRAINT fk_order
+        FOREIGN KEY(order_id)
+            REFERENCES orders(order_id)
+);

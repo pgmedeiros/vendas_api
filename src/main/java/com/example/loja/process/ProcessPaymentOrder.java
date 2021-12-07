@@ -1,6 +1,5 @@
 package com.example.loja.process;
 
-import com.example.loja.model.cart.Cart;
 import com.example.loja.model.payment.Payment;
 
 public class ProcessPaymentOrder{

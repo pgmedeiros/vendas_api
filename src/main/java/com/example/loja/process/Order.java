@@ -1,10 +1,7 @@
 package com.example.loja.process;
 
-import com.example.loja.model.cart.Cart;
 import com.example.loja.model.client.Client;
 import com.example.loja.model.product.Product;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 
 import javax.persistence.*;
 import java.io.Serializable;
