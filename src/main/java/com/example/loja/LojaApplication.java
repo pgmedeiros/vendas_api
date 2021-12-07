@@ -17,56 +17,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class LojaApplication {
 
-	@Autowired
-	private ProductsInterface productsInterface;
-	@Autowired
-	private ItemForCart itemForCart;
-
-
-
 	public static void main(String[] args) {
 		SpringApplication.run(LojaApplication.class, args);
-		main();
 	}
 
-	public static void main(){
-	/*
-
-		==================================== realização de pedido ========================================
-
-	*/
-		// buscar produto pelo id
-		// adicionar ao carrinho
-		// fechar carrinho
-		// fazer pedido
-			// se aprovado, adicionar pedido em client
-			// se não, recusar pedido
-
-		//simulando session
-		Session2 session2 = new Session2();
-		Client client = session2.getClient();
-		Cart cart = CartFactory.createCart(); // o cart será pego da sessão, cada sessão terá seu próprio cart
-
-		//adicionando item no carrinho
-		Integer amount = 2;
-		//Product product = productsInterface.getById(2L);
-		Product product = new Product();
-		product.setName("feijao");
-		product.setPrice(5.00);
-		ItemForCart itemForCart = ItemForCartFactory.createItemForCart(product, amount);
-		cart.setItemForCart(itemForCart);
-
-		//fazendo pedido
-		Payment payment = new Payment();
-		ProcessPaymentOrder order = new ProcessPaymentOrder(cart, payment);
-		if(order.analyzeAvailability()){
-			client.setOrders(order);
-			System.out.println("A compra foi realizada");
-
-		}else{
-			System.out.println("A compra não pode ser realizada");
-		}
-
-	}
 
 }

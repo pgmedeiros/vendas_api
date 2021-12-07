@@ -1,28 +1,27 @@
 package com.example.loja.model.client;
 
-import com.example.loja.model.payment.Order;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 
+@Entity
+@Table(name = "client")
 public class Client {
+    @Id
+    @GeneratedValue
+    @Column(name = "client_id")
+    private Integer id;
 
     private String name;
-    private String adress;
+    private Integer adress;
     private String phoneNumber;
-    private ArrayList<Order> orders = new ArrayList<Order>();
 
-    public Client(String name, String adress, String phoneNumber) {
+    public Client(String name, Integer adress, String phoneNumber) {
         this.name = name;
         this.adress = adress;
         this.phoneNumber = phoneNumber;
-    }
-
-    public ArrayList<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(Order order) {
-        orders.add(order);
     }
 
     public String getName() {
@@ -33,11 +32,11 @@ public class Client {
         this.name = name;
     }
 
-    public String getAdress() {
+    public Integer getAdress() {
         return adress;
     }
 
-    public void setAdress(String adress) {
+    public void setAdress(Integer adress) {
         this.adress = adress;
     }
 
@@ -47,5 +46,13 @@ public class Client {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public Integer getId() {
+        return  this.id;
+    }
+
+    public void setId(Integer id){
+        this.id = id;
     }
 }

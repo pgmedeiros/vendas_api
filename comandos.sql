@@ -24,39 +24,19 @@ CREATE TABLE product(
     name varchar(80) NOT NULL,
     price decimal NOT NULL,
     PRIMARY KEY(product_id)
-)
-
-
-CREATE TABLE cart(
-    cart_id integer NOT NULL,
-    product integer NOT NULL,
-    amount integer NOT NULL,
-    PRIMARY KEY(cart_id),
-    CONSTRAINT fk_product
-        FOREIGN KEY(product)
-            REFERENCES product(product_id)
 );
 
-CREATE TABLE order_ (
-    order_id integer,
-    client_id integer NOT NULL,
-    cart_id integer NOT NULL,
-    PRIMARY KEY (order_id),
+CREATE TABLE orders (
+    order_id INTEGER NOT NULL,
+    order_cod VARCHAR(80) NOT NULL,
+    client_id INTEGER NOT NULL,
+    product_id INTEGER NOT NULL,
+    amount INTEGER NOT NULL,
+    PRIMARY KEY(order_id),
     CONSTRAINT fk_client
-        FOREIGN KEY (client_id)
+        FOREIGN KEY(client_id)
             REFERENCES client(client_id),
-    CONSTRAINT fk_cart
-        FOREIGN KEY (cart_id)
-            REFERENCES cart(cart_id)
-
-);
-
-CREATE TABLE paymentProcess (
-    payment_id integer,
-    order_id integer NOT NULL,
-    status varchar(3) NOT NULL,
-    PRIMARY KEY (payment_id),
-    CONSTRAINT fk_order
-        FOREIGN KEY (order_id)
-            REFERENCES order_(order_id)
+    CONSTRAINT fk_product
+            FOREIGN KEY(product_id)
+                REFERENCES product(product_id)
 );

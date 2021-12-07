@@ -1,34 +1,25 @@
 package com.example.loja.process;
 
 import com.example.loja.model.cart.Cart;
-import com.example.loja.model.payment.Order;
 import com.example.loja.model.payment.Payment;
 
-public class ProcessPaymentOrder extends Order {
+public class ProcessPaymentOrder{
 
-    private Cart cart;
+    private String status;
+    private Order order;
     private Payment payment;
 
-    public ProcessPaymentOrder(Cart cart, Payment payment) {
-        super();
-        this.cart = cart;
+    public ProcessPaymentOrder(Order order, Payment payment) {
+        this.order = order;
         this.payment = payment;
+        this.status = "PPP";
     }
 
-    public Boolean doOrder(){
-        if(analyzeAvailability()){
-            return true;
-        }else{
-            return false;
-        }
+    public String getStatus(){
+        return status;
     }
-
-    public boolean analyzeAvailability(){
-        if(this.cart.getFinalPrice() <= this.payment.getCredit()){
-            return true;
-        }else{
-            return false;
-        }
+    public void setStatus(String status){
+        this.status = status;
     }
 
 

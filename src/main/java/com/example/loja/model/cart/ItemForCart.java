@@ -3,6 +3,8 @@ package com.example.loja.model.cart;
 import com.example.loja.model.product.Product;
 import org.springframework.stereotype.Component;
 
+import javax.persistence.Entity;
+
 @Component
 public class ItemForCart {
 
