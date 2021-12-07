@@ -3,8 +3,6 @@ package com.example.loja.controller;
 
 import com.example.loja.database.OrderInterface;
 import com.example.loja.database.ProductsInterface;
-import com.example.loja.model.cart.Cart;
-import com.example.loja.model.cart.CartFactory;
 import com.example.loja.model.client.Client;
 import com.example.loja.model.product.Product;
 import com.example.loja.process.Order;
@@ -31,14 +29,13 @@ public class ControllerAPI {
     @GetMapping("/produtos")
     public void main(){
 
-
         Client client = new Client("pedro", 2, "999999");
         client.setId(1);
 
         Product product = new Product();
         product.setName("SMARTPHONE 03");
         product.setPrice(252.00);
-        product.setId(1);
+        product.setId(2);
 
         Product product2 = new Product();
         product2.setName("MURIÇOCA");
@@ -61,41 +58,3 @@ public class ControllerAPI {
 }
 
 
-/*
-
-
-		==================================== realização de pedido ========================================
-
-
-    // buscar produto pelo id
-    // adicionar ao carrinho
-    // fechar carrinho
-    // fazer pedido
-    // se aprovado, adicionar pedido em client
-    // se não, recusar pedido
-
-    //simulando session
-    Session2 session2 = new Session2();
-    Client client = session2.getClient();
-    Cart cart = CartFactory.createCart(); // o cart será pego da sessão, cada sessão terá seu próprio cart
-
-    //adicionando item no carrinho
-    Integer amount = 2;
-    //Product product = productsInterface.getById(2L);
-    Product product = new Product();
-		product.setName("feijao");
-                product.setPrice(5.00);
-                ItemForCart itemForCart = ItemForCartFactory.createItemForCart(product, amount);
-                cart.setItemForCart(itemForCart);
-
-                //fazendo pedido
-                Payment payment = new Payment();
-                ProcessPaymentOrder order = new ProcessPaymentOrder(cart, payment);
-                if(order.analyzeAvailability()){
-                client.setOrders(order);
-                System.out.println("A compra foi realizada");
-
-                }else{
-                System.out.println("A compra não pode ser realizada");
-                }
- */
