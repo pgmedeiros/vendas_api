@@ -50,3 +50,7 @@ CREATE TABLE paymentProcess (
         FOREIGN KEY(order_id)
             REFERENCES orders(order_id)
 );
+
+ALTER TABLE client ADD COLUMN password varchar(256);
+ALTER TABLE client ALTER COLUMN password SET NOT NULL;
+

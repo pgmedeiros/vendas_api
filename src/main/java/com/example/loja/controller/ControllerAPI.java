@@ -7,8 +7,6 @@ import com.example.loja.model.client.Client;
 import com.example.loja.model.product.Product;
 import com.example.loja.process.Order;
 import com.example.loja.process.Orders;
-import com.example.loja.testes.Session2;
-import org.hibernate.query.criteria.internal.OrderImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
